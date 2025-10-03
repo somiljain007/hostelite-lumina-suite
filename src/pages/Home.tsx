@@ -1,5 +1,6 @@
 import ScrollAnimation from '@/components/ScrollAnimation';
 import { Notepad, ChatsCircle, Bell, ArrowRight } from 'phosphor-react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const features = [
@@ -9,6 +10,7 @@ const Home = () => {
       title: 'Mess Menu',
       description: 'View daily meal schedules and weekly menu plans with nutritional information',
       gradient: 'from-primary to-secondary',
+      link: '/mess-menu',
     },
     {
       id: 'complaint-box',
@@ -16,6 +18,7 @@ const Home = () => {
       title: 'Complaint Box',
       description: 'Submit and track maintenance requests, grievances, and feedback',
       gradient: 'from-secondary to-accent',
+      link: '/complaint-box',
     },
     {
       id: 'notice-board',
@@ -23,6 +26,7 @@ const Home = () => {
       title: 'Notice Board',
       description: 'Stay updated with important announcements, events, and hostel notifications',
       gradient: 'from-accent to-primary',
+      link: '/notice-board',
     },
   ];
 
@@ -71,27 +75,29 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <ScrollAnimation key={feature.id} delay={index * 100}>
-                <div
-                  id={feature.id}
-                  className="glass-card rounded-3xl p-8 hover:scale-105 transition-all duration-300 cursor-pointer group"
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 group-hover:shadow-glow transition-all`}>
-                    <feature.icon size={32} weight="light" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-light tracking-tighter mb-4">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="opacity-70 leading-relaxed">
-                    {feature.description}
-                  </p>
+                <Link to={feature.link}>
+                  <div
+                    id={feature.id}
+                    className="glass-card rounded-3xl p-8 hover:scale-105 transition-all duration-300 cursor-pointer group"
+                  >
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 group-hover:shadow-glow transition-all`}>
+                      <feature.icon size={32} weight="light" />
+                    </div>
+                    
+                    <h3 className="text-2xl font-light tracking-tighter mb-4">
+                      {feature.title}
+                    </h3>
+                    
+                    <p className="opacity-70 leading-relaxed">
+                      {feature.description}
+                    </p>
 
-                  <button className="mt-6 inline-flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
-                    <span className="text-sm">Learn More</span>
-                    <ArrowRight size={16} weight="light" />
-                  </button>
-                </div>
+                    <button className="mt-6 inline-flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
+                      <span className="text-sm">Learn More</span>
+                      <ArrowRight size={16} weight="light" />
+                    </button>
+                  </div>
+                </Link>
               </ScrollAnimation>
             ))}
           </div>
