@@ -68,6 +68,18 @@ const Navigation = () => {
               >
                 Notice Board
               </button>
+              <button 
+                onClick={() => navigate('/about-us')}
+                className="text-sm hover:text-primary transition-colors"
+              >
+                About Us
+              </button>
+              <button 
+                onClick={() => navigate('/contact-us')}
+                className="text-sm hover:text-primary transition-colors"
+              >
+                Contact Us
+              </button>
               <button
                 onClick={() => navigate('/login')}
                 className="px-6 py-2 rounded-full neumorphic-btn text-sm font-medium"
@@ -133,6 +145,24 @@ const Navigation = () => {
                 className="text-left text-xl hover:text-primary transition-colors py-3"
               >
                 Notice Board
+              </button>
+              <button
+                onClick={() => {
+                  navigate('/about-us');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-left text-xl hover:text-primary transition-colors py-3"
+              >
+                About Us
+              </button>
+              <button
+                onClick={() => {
+                  navigate('/contact-us');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="text-left text-xl hover:text-primary transition-colors py-3"
+              >
+                Contact Us
               </button>
               <button
                 onClick={() => {

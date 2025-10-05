@@ -10,6 +10,8 @@ import NotFound from "./pages/NotFound";
 import MessMenu from "./pages/MessMenu";
 import ComplaintBox from "./pages/ComplaintBox";
 import NoticeBoard from "./pages/NoticeBoard";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/mess-menu" element={<MessMenu />} />
           <Route path="/complaint-box" element={<ComplaintBox />} />
           <Route path="/notice-board" element={<NoticeBoard />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
